@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Music Acee</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="navbar">
+            <img src="Ace1/music_logo.png" class="logo"></img>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SPECIFICATIONS</a></li>
+                <li><a href="#">PRODUCTS</a></li>
+                <li><a href="#">CONNECT</a></li>
+            </ul>        
+        </div>
+        <div class="content">
+            <div class="left-col">
+                <h1><font color=white>THE<br> REAL<br> SOUND</font></h1>
+            </div>
+            <div class="right-col">
+                    <p>Click Here To Listen</p>
+                    <img src="Ace1/play.png" id="icon">
+            </div>
+        </div>
+        <div class="circle"></div>
+
+    </div>
+    <svg>
+        <filter id="wavy">
+            <feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
+                <animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite"></animate>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+        </filter>
+    </svg>
+
+    <audio id="mySong">
+        <source src="Ace1/Challa Gaali Thakuthunna.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function(){
+            if(mySong.paused){
+                mySong.play();
+                icon.src = "Ace1/pause.png";
+            }
+            else{
+                mySong.pause();
+                icon.src = "Ace1/play.png";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
